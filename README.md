@@ -76,12 +76,23 @@ git clone https://github.com/qkdrk7777775/2022_nia
 cd 2022_nia
 
 # dockerfile build
-docker build -f Dockerfile –t my_deepo .
+docker build -t my_deepo .
 
 # docker run 
 docker run -d -p 8888:8888 \
   -p 8889:8889 --name lab --ipc=host my_deepo jupyter lab \
    --no-browser --ip=0.0.0.0 --allow-root --LapApp.allow_origin='*' --LapApp.root_dir='/root'
+
+# http://localhost:8888 접속
+## token 확인
+docker exec -it lab jupyter server list 
+#http://3c8dd0a250b4:8888/?token=b6b1d97932978f1519a186614ebde305627069e9b82f1891 :: /
+# 입력 -> b6b1d97932978f1519a186614ebde305627069e9b82f1891
+
+# 주피터 패키지 설치
+## 주피터 터미널에서 아래 명령어 실행
+git clone https://github.com/qkdrk7777775/2022_nia
+pip install -r requirements.txt
 ```
 
 </details>

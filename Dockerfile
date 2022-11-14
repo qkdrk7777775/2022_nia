@@ -10,11 +10,11 @@ RUN curl -fsSL https://code-server.dev/install.sh | sh
 RUN apt install curl dirmngr apt-transport-https \
     lsb-release ca-certificates -y && \
     apt install nodejs -y && \
-    apt install npm -y 
+    apt install npm -y
 
 RUN   curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh && \
     bash nodesource_setup.sh  && \
-    apt install nodejs -y && \ 
+    apt install nodejs -y && \
     npm install -g npm  -y
 
 RUN pip uninstall enum34 -y  && \
@@ -28,14 +28,7 @@ RUN pip uninstall enum34 -y  && \
     jupyterlab-kernelspy \
     jupyterlab_execute_time\
     ipyleaflet \
-    jupyterlab-drawio 
+    jupyterlab-drawio
 
 
-RUN jupyter labextension update --all && \
-    jupyter labextension install jupyterlab-kernelspy && \
-    jupyter labextension install @jupyter-widgets/jupyterlab-manager && \
-    jupyter labextension install jupyterlab-drawio && \
-    jupyter nbextension enable --py --sys-prefix ipyleaflet && \
-    jupyter lab build
-
-
+RUN jupyter lab build
