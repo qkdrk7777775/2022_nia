@@ -97,13 +97,13 @@ pip install -r requirements.txt
 
 </details>
 
-## 모델 정보 가이드
+## 활용 모델 설명
 
 |작업명|눈깜빡임 분류|세그멘테이션| 수평/수직 분류| 진단모델|
 |:---|---:|---:|---:|---:|
 |Description|CNN Classification|DeepVOG|CNN|LightGBM|
 |모델 아키텍쳐|CNN Classification|CNN기반 Segmentation Model|CNN backbone Classification| LightGBM Classification|
-|input|(Batch, 240, 320, 3)|(Batch, 240, 320, 3)|(Batch, 240, 320, 3)|(N,)|
+|input|(Batch, 240, 320, 3)|(Batch, 240, 320, 3)|(Batch, 240, 320, 3)|(N, 5)|
 |output|(Batch, 3)|(Batch, 240, 320, 3)|(Batch, 3, 3)|(N, 1)|
 |task|분류|객체탐지|분류|분류|
 |training dataset|안구 이미지|안구 이미지|안구이미지|안구이미지+검진자료|
@@ -111,7 +111,6 @@ pip install -r requirements.txt
 |training optim|Adam|None|Adam|None|
 |learning_rate|0.005|None|0.05|(0.05, 0.1, 0.2)|
 |evaluation metric|AUC|AUC|AUC|AUC|
-
 
 [세그멘테이션 활용 모델](https://github.com/pydsgz/DeepVOG)
 
