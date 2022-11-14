@@ -83,6 +83,11 @@ docker run -d -p 8888:8888 \
   -p 8889:8889 --name lab --ipc=host my_deepo jupyter lab \
    --no-browser --ip=0.0.0.0 --allow-root --LapApp.allow_origin='*' --LapApp.root_dir='/root'
 
+# gpu
+docker run -d  --gpus all -p 8888:8888 \
+  -p 8889:8889 --name lab --ipc=host my_deepo jupyter lab \
+   --no-browser --ip=0.0.0.0 --allow-root --LapApp.allow_origin='*' --LapApp.root_dir='/root'
+
 # http://localhost:8888 접속
 ## token 확인
 docker exec -it lab jupyter server list 
@@ -92,6 +97,7 @@ docker exec -it lab jupyter server list
 # 주피터 패키지 설치
 ## 주피터 터미널에서 아래 명령어 실행
 git clone https://github.com/qkdrk7777775/2022_nia
+cd 2022_nia
 pip install -r requirements.txt
 ```
 
