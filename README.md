@@ -102,7 +102,8 @@ pip install -r requirements.txt
 |작업명|눈깜빡임 분류|세그멘테이션| 수평/수직 분류| 진단모델|
 |:---|---:|---:|---:|---:|
 |Description|CNN Classification|DeepVOG|CNN|LightGBM|
-|모델 아키텍쳐|CNN Classification|CNN기반 Segmentation Model|CNN backbone Classification| LightGBM Classification|
+|모델 아키텍쳐|CNN Classification|CNN기반 Segmentation Model|CNN + RNN Classification| LightGBM Classification|
+|저장된 모델명|CNN Classification|DeepVOG.h5|cnn_rnn_model_*_fold.h5|lgbm_*_fold.pkl|
 |input|(Batch, 240, 320, 3)|(Batch, 240, 320, 3)|(Batch, 240, 320, 3)|(N, 5)|
 |output|(Batch, 3)|(Batch, 240, 320, 3)|(Batch, 3, 3)|(N, 1)|
 |task|분류|객체탐지|분류|분류|
