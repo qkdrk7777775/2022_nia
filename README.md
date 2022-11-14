@@ -1,10 +1,9 @@
 # 2022 NIA 사업 관련 AI 환경 구축 가이드
 
 
-## 실행환경
-
+## 실행환경 구축
 <details>
-    <summary>NVIDIA DOCKER 설치</summary>
+    <summary>DOCKER 설치</summary>
 
 ``` 
 # 기존 설치 삭제
@@ -68,5 +67,23 @@ ubuntu-drivers autoinstall
 [참고 NVIDIA Docker install](http://ducj3.iptime.org/ai_env_dev/)
 </details>
 
+<details>
+    <summary>도커 이미지 생성</summary>
+
+``` 
+# git clone
+git clone https://github.com/qkdrk7777775/2022_nia
+cd 2022_nia
+
+# dockerfile build
+docker build -f Dockerfile –t my_deepo .
+
+# docker run 
+docker run -d -p 8888:8888 \
+  -p 8889:8889 --name lab --ipc=host my_deepo jupyter lab \
+   --no-browser --ip=0.0.0.0 --allow-root --LapApp.allow_origin='*' --LapApp.root_dir='/root'
+```
+
+</details>
 
 
