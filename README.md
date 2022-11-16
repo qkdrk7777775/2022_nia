@@ -121,5 +121,8 @@ pip install -r requirements.txt
 
 [세그멘테이션 활용 모델](https://github.com/pydsgz/DeepVOG)
 
+용량 문제로 모델은 구글 드라이브를 통해 공유
+(https://drive.google.com/drive/folders/12Kehna9yPhkUVU8tI7FmcnitNG04rxQC?usp=share_link)
+
 실행 관련은 jupyter 폴더 참고
 
