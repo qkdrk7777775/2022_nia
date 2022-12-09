@@ -117,7 +117,7 @@ pip install -r requirements.txt
 |training loss|categorical_crossentropy|None|categorical_crossentropy|multi_logloss|
 |training optim|Adam|None|Adam|None|
 |learning_rate|0.005|None|0.05|(0.05, 0.1, 0.2)|
-|evaluation metric|AUC|AUC|AUC|AUC|
+|evaluation metric|AUC|IoU|AUC|AUC|
 
 [세그멘테이션 활용 모델](https://github.com/pydsgz/DeepVOG)
 
