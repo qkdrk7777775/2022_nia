@@ -111,7 +111,7 @@ pip install -r requirements.txt
 |모델 아키텍쳐|CNN Classification|CNN Classification| LightGBM Classification|
 |저장된 모델명|CNN Classification|cnn_rnn_model_*_fold.h5|lgbm_*_fold.pkl|
 |input|(Batch, 240, 320, 3)|(Batch, 240, 320, 3)|(N, 5)|
-|output|(Batch, 3)|(Batch, 3, 3)|(N, 1)|
+|output|(Batch, 3)|(Batch, 3)|(N, 1)|
 |task|분류|분류|분류|
 |training dataset|안구 이미지|안구이미지|결과지자료+검진자료|
 |training loss|categorical_crossentropy|categorical_crossentropy|logloss|
