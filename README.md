@@ -109,7 +109,7 @@ pip install -r requirements.txt
 |:---|---:|---:|---:|
 |Description|CNN Classification|CNN|LightGBM|
 |모델 아키텍쳐|CNN Classification|CNN Classification| LightGBM Classification|
-|저장된 모델명|CNN Classification|cnn_rnn_model_*_fold.h5|lgbm_*_fold.pkl|
+|저장된 모델명|눈깜빡임분류_v0_1.h5|안진방향판별_v0_1.h5|전정질환군분류.pkl|
 |input|(Batch, 240, 320, 3)|(Batch, 240, 320, 3)|(N, 5)|
 |output|(Batch, 3)|(Batch, 3)|(N, 1)|
 |task|분류|분류|분류|
