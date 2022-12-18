@@ -105,21 +105,19 @@ pip install -r requirements.txt
 
 ## 활용 모델 설명
 
-|작업명|눈깜빡임 분류|세그멘테이션| 수평/수직 분류| 진단모델|
-|:---|---:|---:|---:|---:|
-|Description|CNN Classification|DeepVOG|CNN|LightGBM|
-|모델 아키텍쳐|CNN Classification|CNN기반 Segmentation Model|CNN + RNN Classification| LightGBM Classification|
-|저장된 모델명|CNN Classification|DeepVOG.h5|cnn_rnn_model_*_fold.h5|lgbm_*_fold.pkl|
-|input|(Batch, 240, 320, 3)|(Batch, 240, 320, 3)|(Batch, 240, 320, 3)|(N, 5)|
-|output|(Batch, 3)|(Batch, 240, 320, 3)|(Batch, 3, 3)|(N, 1)|
-|task|분류|객체탐지|분류|분류|
-|training dataset|안구 이미지|안구 이미지|안구이미지|결과지자료+검진자료|
-|training loss|categorical_crossentropy|None|categorical_crossentropy|logloss|
-|training optim|Adam|None|Adam|None|
-|learning_rate|0.005|None|0.05|(0.05, 0.1, 0.2)|
-|evaluation metric|AUC|IoU|AUC|AUC|
-
-[세그멘테이션 활용 모델](https://github.com/pydsgz/DeepVOG)
+|작업명|눈깜빡임 분류|수평/수직 분류| 진단모델|
+|:---|---:|---:|---:|
+|Description|CNN Classification|CNN|LightGBM|
+|모델 아키텍쳐|CNN Classification|CNN Classification| LightGBM Classification|
+|저장된 모델명|CNN Classification|cnn_rnn_model_*_fold.h5|lgbm_*_fold.pkl|
+|input|(Batch, 240, 320, 3)|(Batch, 240, 320, 3)|(N, 5)|
+|output|(Batch, 3)|(Batch, 3, 3)|(N, 1)|
+|task|분류|분류|분류|
+|training dataset|안구 이미지|안구이미지|결과지자료+검진자료|
+|training loss|categorical_crossentropy|categorical_crossentropy|logloss|
+|training optim|Adam|Adam|None|
+|learning_rate|0.005|0.05|(0.05, 0.1, 0.2)|
+|evaluation metric|AUC|AUC|AUC|
 
 용량 문제로 모델은 구글 드라이브를 통해 공유
 (https://drive.google.com/drive/folders/12Kehna9yPhkUVU8tI7FmcnitNG04rxQC?usp=share_link)
